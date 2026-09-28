@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página no encontrada · Tahiel Cressa</title>
+    <meta name="robots" content="noindex" />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0b1220;
+        --fg: #f8fafc;
+        --muted: #94a3b8;
+        --accent: #4ade80;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100dvh;
+        display: grid;
+        place-items: center;
+        padding: 2rem;
+        background: radial-gradient(1200px 600px at 50% -10%, #16304a 0%, var(--bg) 60%);
+        color: var(--fg);
+        font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+        text-align: center;
+      }
+      .card {
+        max-width: 34rem;
+      }
+      .code {
+        font-size: 4rem;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        margin: 0;
+      }
+      .card h1 {
+        font-size: 1.35rem;
+        margin: 0.5rem 0 0.75rem;
+      }
+      .card p {
+        color: var(--muted);
+        line-height: 1.6;
+        margin: 0 0 1.75rem;
+      }
+      .btn {
+        display: inline-block;
+        padding: 0.85rem 1.6rem;
+        border-radius: 999px;
+        background: var(--accent);
+        color: #06210f;
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .btn:hover {
+        filter: brightness(1.08);
+      }
+      .note {
+        margin-top: 2rem;
+        font-size: 0.8rem;
+        color: var(--muted);
+      }
+      .note a {
+        color: var(--accent);
+      }
+    </style>
+    <script>
+      // Si la ruta pertenece a una app SPA servida en un subdirectorio de este
+      // user site (ej. /Serrana/...), redirigimos al index.html de esa app
+      // pasando la ruta original para que la restaure el router.
+      (function () {
+        var SPAS = ['/Serrana/'];
+        var path = window.location.pathname;
+        for (var i = 0; i < SPAS.length; i++) {
+          var base = SPAS[i];
+          if (path.indexOf(base) === 0) {
+            var rest = path.slice(base.length) + window.location.search;
+            window.location.replace(
+              base + 'index.html?_redirect=' + encodeURIComponent('/' + rest.replace(/^\/+/, '')),
+            );
+            return;
+          }
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="card">
+      <p class="code">404</p>
+      <h1>No encontramos esta página</h1>
+      <p>
+        El enlace puede estar roto o la dirección cambió. Te dejo el camino de vuelta al
+        portafolio.
+      </p>
+      <a class="btn" href="/">Volver al inicio</a>
+      <p class="note">También podés ver mis proyectos en <a href="https://github.com/tahielcressa">GitHub</a>.</p>
+    </div>
+  </body>
+</html>
